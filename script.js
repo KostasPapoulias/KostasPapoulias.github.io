@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="background-image">
                 <img src="pictures/bgFullHD.png" alt="">
             </div>
-            <script src="Animals/script.js"></script>
-            <link rel="stylesheet" href="Animals/style.css">
+<!--            <script src="Animals/script.js"></script>-->
+<!--            <link rel="stylesheet" href="Animals/style.css">-->
             `;
     }
 
