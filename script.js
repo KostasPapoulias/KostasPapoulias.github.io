@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function overrideMenu() {
-        document.querySelector('.index').innerHTML = `
+        document.querySelector('.menu').innerHTML = `
             <div class="contain">
                 <div class="main_section" id="main_section"></div>
                 <div class="select_section" id="select_section"></div>
