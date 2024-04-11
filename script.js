@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <script src="Animals/script.js"></script>
             <link rel="stylesheet" href="Animals/style.css">
-
             `;
     }
 
