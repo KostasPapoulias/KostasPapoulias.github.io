@@ -31,7 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="background-image">
                 <img src="pictures/bgFullHD.png" alt="">
-            </div>`;
+            </div>
+            <script src="Animals/script.js"></script>
+            <link rel="stylesheet" href="Animals/style.css">
+
+            `;
     }
 
     function loadGameScript() {
