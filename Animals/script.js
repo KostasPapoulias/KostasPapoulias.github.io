@@ -1,4 +1,4 @@
-//      GLOBAL 
+//      GLOBAL
 let animals = ['cat', 'duck', 'frog', 'goat', 'horse', 'pig', 'rabbit', 'turkey', 'dachshund']; //Default array with all the animals
 let numberOfAnimals = localStorage.getItem('numberOfAnimals')  ?? 3;
 
@@ -224,7 +224,7 @@ added = false;
 function dragEnter(event) {
     event.preventDefault();
 
-     if (!added) {
+    if (!added) {
         tempName = highlightCell.textContent;
         leftInnerDiv.textContent = tempName;
         leftInnerDiv.appendChild(addImage(tempName, 1));
@@ -238,7 +238,7 @@ function dragEnter(event) {
         main_section.removeChild(highlightCell);
         main_section.appendChild(newDiv);
         added = true;
-     }
+    }
 }
 
 /**
@@ -246,12 +246,12 @@ function dragEnter(event) {
  */
 newDiv.addEventListener('dragleave', (event) => {
     if (event.target !== newDiv) return;
-        main_section.removeChild(newDiv);
-        highlightCell.textContent = tempName;
-        highlightCell.appendChild(addImage(tempName, 1));
-        highlightCell.addEventListener('drop', drop);
-        main_section.appendChild(highlightCell);
-        added = false;
+    main_section.removeChild(newDiv);
+    highlightCell.textContent = tempName;
+    highlightCell.appendChild(addImage(tempName, 1));
+    highlightCell.addEventListener('drop', drop);
+    main_section.appendChild(highlightCell);
+    added = false;
 });
 
 /**
@@ -262,12 +262,12 @@ newDiv.addEventListener('dragleave', (event) => {
  */
 function drop(event) {
     event.preventDefault();
-        main_section.removeChild(newDiv);
-        highlightCell.textContent = tempName;
-        highlightCell.appendChild(addImage(tempName, 1));
-        highlightCell.addEventListener('drop', drop);
-        main_section.appendChild(highlightCell);
-        added = false;
+    main_section.removeChild(newDiv);
+    highlightCell.textContent = tempName;
+    highlightCell.appendChild(addImage(tempName, 1));
+    highlightCell.addEventListener('drop', drop);
+    main_section.appendChild(highlightCell);
+    added = false;
 
     const dropTarget = tempName;
     if (!dropTarget) return;
@@ -331,9 +331,9 @@ function updateSelectSection() {
  */
 function getValidIndex(array) {
     for (let i = 0; i < array.length; i++) {
-      if (!array[i].displayed) {
-        return i;
-      }
+        if (!array[i].displayed) {
+            return i;
+        }
     }
 }
 

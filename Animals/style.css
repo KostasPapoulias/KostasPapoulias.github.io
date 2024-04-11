@@ -41,7 +41,7 @@ body{
 }
 
 .main_section{
-  /* background-color: rgb(161, 87, 7); */
+    /* background-color: rgb(161, 87, 7); */
     min-height: 332px;
     max-height: 332px;
     text-align: center;
@@ -77,9 +77,9 @@ body{
     background-color: #ccc;
     box-shadow: 0px 20px 20px 40px #ccc;
     z-index: 999;
-  }
+}
 
-  .close-button {
+.close-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -87,11 +87,11 @@ body{
     color: rgb(0, 0, 0);
     z-index: 1000;
     font-size: 40px;
-  }
+}
 
-  .message{
+.message{
     text-align: center;
     padding-top: 35%;
     font-size: 40px;
 
-  }
+}
