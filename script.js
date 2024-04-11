@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadGameScript() {
         let scriptElement = document.createElement('script');
-        scriptElement.src = "../Animals/script.js";
+        scriptElement.src = "../Animals/index.js";
         document.body.appendChild(scriptElement);
     }
 });
