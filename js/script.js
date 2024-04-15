@@ -80,14 +80,17 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(scriptElement);
     }
 
-    function restoreRadioState() {
-        const maxAnimals = localStorage.getItem('MAX_ANIMALS');
-        const maxRounds = localStorage.getItem('MAX_ROUNDS');
-        if (maxAnimals && maxRounds) {
-            document.querySelector(`input[name="radio1"][value="${maxAnimals}"]`).checked = true;
-            document.querySelector(`input[name="radio2"][value="${maxRounds}"]`).checked = true;
-        }
+   function restoreRadioState() {
+    const maxAnimals = localStorage.getItem('MAX_ANIMALS');
+    const maxRounds = localStorage.getItem('MAX_ROUNDS');
+    if (maxAnimals && maxRounds) {
+        const radio1 = document.querySelector(`input[name="radio1"][value="${maxAnimals}"]`);
+        const radio2 = document.querySelector(`input[name="radio2"][value="${maxRounds}"]`);
+        if (radio1) radio1.checked = true;
+        if (radio2) radio2.checked = true;
     }
+}
+
 
     // Вызов функции восстановления состояния радиокнопок при загрузке страницы
     restoreRadioState();
