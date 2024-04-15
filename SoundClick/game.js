@@ -1,10 +1,14 @@
 //GLOBAL section
 
-let animals = ['cat', 'duck', 'frog', 'pig', 'dog', 'horse'];
-let MAX_ANIMALS = localStorage.getItem('MAX_ANIMALS')  ?? 3;
-let MAX_ROUNDS = localStorage.getItem('MAX_ROUNDS') ?? -1;
+let animals = ['cat', 'duck', 'frog', 'pig', 'bunny', 'horse', 'goat', 'turkey', 'dog', 'cow', 'rat', 'rooster'];
+let IMG_PATH = "../../png/";
+let SOUND_PATH = "../../sounds/";
+
+let MAX_ANIMALS = localStorage.getItem('MAX_ANIMALS');
+let MAX_ROUNDS = localStorage.getItem('MAX_ROUNDS');
+let INFINITY_GAME = JSON.parse(localStorage.getItem('INFINITY_GAME'));
 //pokrok obtiznosti/win streak complexity [true/false]
-let COMPLEXITY_INC = localStorage.getItem('COMPLEXITY_INC') ?? false;
+let COMPLEXITY_INC = JSON.parse(localStorage.getItem('COMPLEXITY_INC'));
 
 const overlay = document.getElementById('overlay');
 const closeButton = document.createElement('span');
@@ -18,10 +22,6 @@ const contentDivEnd = document.createElement('div');
 
 
 function createOverlay(){
-    closeButton.textContent = '×';
-    closeButton.classList.add('close-button');
-    overlay.appendChild(closeButton);
-
     contentDiv.classList.add('message');
     overlay.appendChild(contentDiv);
     closeButton.addEventListener('click', hideOverlay);
@@ -29,7 +29,11 @@ function createOverlay(){
 function createEndGameOverlay(){
     buttonContainer.classList.add('button-container');
     menuButtonOv.textContent = 'Return to Menu';
-    restartButton.textContent = 'Play Again!'
+    restartButton.textContent = 'Play Again!';
+
+    menuButtonOv.classList.add('end_button');
+    restartButton.classList.add('end_button');
+
     buttonContainer.appendChild(menuButtonOv);
     buttonContainer.appendChild(restartButton);
 
@@ -54,6 +58,7 @@ function returnMenu(){
 function showOverlay(text) {
     overlay.style.display = 'block';
     contentDiv.innerHTML = text;
+    setTimeout(hideOverlay,2000)
 }
 function hideOverlay() {
     overlay.style.display = 'none';
@@ -109,10 +114,10 @@ function shuffleArray(array) {
 }
 function createHighlight(){
     cell_highlight = null;
-    shuffleArray(play_animals);
+    shuffleArray(animals);
     let randomIndex = Math.floor(Math.random() * play_animals.length);
     const image = addImage(play_animals[randomIndex]);
-    cell_highlight = new cellClass(play_animals[randomIndex],  image, "../sounds/" + play_animals[randomIndex] + ".mp3");
+    cell_highlight = new cellClass(play_animals[randomIndex],  image, SOUND_PATH + play_animals[randomIndex] + ".mp3");
 }
 function createSelection(){
     cell_selection = play_animals.map((cellName) => {
@@ -130,7 +135,7 @@ function createCells() {
 }
 function addImage(name){
     let img = document.createElement("img");
-    img.src = "../png/" + name + ".png" ;
+    img.src = IMG_PATH + name + ".png";
     return img;
 }
 function playSoundGame() {
@@ -179,7 +184,7 @@ function playSoundGame() {
     }
 }
 function winStreakValidator(){
-    if (WIN_STREAK % 3 == 0 && COMPLEXITY_INC){
+    if (WIN_STREAK % 3 == 0 && COMPLEXITY_INC && MAX_ANIMALS < 6){
         MAX_ANIMALS++;
     }
     play_animals = animals.slice(0,MAX_ANIMALS);
@@ -190,12 +195,10 @@ function getCellElements() {
     const cellElements = selectSection.querySelectorAll('.cell');
     return Array.from(cellElements);
 }
-
-
 function activateCheatClass(el) {
     el.classList.toggle('cheat');
 }
- function guess_helper(){
+function guess_helper(){
     let cells = getCellElements();
     cells.forEach(el => {
         if (el.textContent === cell_highlight.getName()){
@@ -208,7 +211,7 @@ function activateCheatClass(el) {
 }
 function endGameValidator(){
     ROUNDS_PLAYED++;
-    if(ROUNDS_PLAYED == MAX_ROUNDS){
+    if(ROUNDS_PLAYED == MAX_ROUNDS && !INFINITY_GAME ){
         hideOverlay();
         contentDivEnd.innerHTML = 'Great Play, Dear!\n' + "Your Score is: " + success_attempts + "/" + total_attempts;
         endGame();
@@ -246,6 +249,8 @@ function restartGame(){
     // new round representing
     playSoundGame();
 }
+
+
 function continueGame(){
     //returning styles of guessing animal
     const image = cell_highlight.getImage();

@@ -1,3 +1,29 @@
+/*TEST*/
+
+
+/* Мерцание белым цветом */
+@keyframes sizing {
+    0% {
+        scale: 1; /* Прозрачный фон */
+    }
+    50% {
+        scale: 1.25; /* Белый фон */
+    }
+    100% {
+        scale: 1; /* Снова прозрачный фон */
+    }
+}
+
+/* Применяем анимации к изображению */
+.cheat {
+    animation: sizing 2s infinite; /* Применяем обе анимации */
+}
+
+.game {
+    margin-bottom: 20px;
+}
+/*TEST*/
+
 .container{
     width: auto;
     height:auto;
@@ -7,13 +33,58 @@
     /* background-color: rgb(182, 102, 16); */
 
 }
+.grayscale {
+    filter: grayscale(100%); /* Превращает изображение в черно-белое */
+}
+.blackout {
+    filter: brightness(0);
+}
 
-body{
-    background-image: url("../background/bgFullHD.png");
+.anim_img1{
+    width: 70%;
+    padding: 10px;
+    max-height: 250px;
+}
+
+.select_img{
+}
+
+
+.button-container{
+    width: inherit;
+    display: flex;
+    height: 40px;
+    justify-content: space-around;
+}
+
+.in_game_button{
+    cursor: pointer;
+    position: absolute;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    height: 28px;
+    filter: drop-shadow(2px 3px 0.5px grey);
+}
+.end_button{
+    cursor: pointer;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    height: 28px;
+    filter: drop-shadow(2px 3px 0.5px grey);
+}
+
+.guess_button{
+    right: 20px;
+    top: 20px;
+}
+
+.menu_button{
+    left: 20px;
+    top: 20px;
 }
 
 .cell {
-
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
     display: inline-block;
     margin: 10px;
     text-align: center;
@@ -33,17 +104,17 @@ body{
 .select_section{
     text-align: center;
     grid-gap: 10px;
-    /*min-height: auto;*/
-    /*max-height: auto;*/
-    height: 325px;
+    min-height: auto;
+    max-height: auto;
     position: relative;
+    align-items: center;
 
 }
 
 .main_section{
     /* background-color: rgb(161, 87, 7); */
-    min-height: 332px;
-    max-height: 332px;
+    min-height: auto;
+    max-height: auto;
     text-align: center;
     flex:1;
     padding-top: 40px;
@@ -52,17 +123,17 @@ body{
     border-radius: 200px;
 }
 
-/*.background-image {*/
-/*  position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background-image: url('../background/bgFullHD.png');*/
-/*    background-size: auto;*/
-/*    background-repeat: no-repeat;*/
-/*    z-index: -1;*/
-/*}*/
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../background/bgFullHD.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
 
 
 .overlay {

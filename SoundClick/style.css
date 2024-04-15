@@ -1,7 +1,8 @@
 /*TEST*/
+body{
+    /*background-image: url('../background/bgFullHD.png');*/
+}
 
-
-/* Мерцание белым цветом */
 @keyframes sizing {
     0% {
         scale: 1; /* Прозрачный фон */
@@ -17,10 +18,6 @@
 /* Применяем анимации к изображению */
 .cheat {
     animation: sizing 2s infinite; /* Применяем обе анимации */
-}
-
-.in_game_button{
-
 }
 
 .game {
@@ -45,7 +42,8 @@
 }
 
 .anim_img{
-    width: 210px;
+    width: 20vw;
+    max-width: 200px;
     padding: 10px;
 }
 
@@ -53,8 +51,28 @@
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
 }
 
+
+.button-container{
+    width: inherit;
+    display: flex;
+    height: 40px;
+    justify-content: space-around;
+}
+
 .in_game_button{
+    cursor: pointer;
     position: absolute;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    height: 28px;
+    filter: drop-shadow(2px 3px 0.5px grey);
+}
+.end_button{
+    cursor: pointer;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    height: 28px;
+    filter: drop-shadow(2px 3px 0.5px grey);
 }
 
 .guess_button{
@@ -86,11 +104,11 @@
 
 
 .select_section{
+    width: max-content;
     text-align: center;
     grid-gap: 10px;
     min-height: auto;
-    max-height: auto;   
-    position: relative; 
+    position: relative;
 
 }
 
