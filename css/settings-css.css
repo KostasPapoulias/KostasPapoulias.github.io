@@ -1,0 +1,403 @@
+/* The container */
+.container {
+    display: flex;
+    position: relative;
+
+    padding-left: 35px;
+    margin-bottom: 12px;
+    /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    /*cursor: pointer;*/
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+    flex-direction: row;
+    align-items: center;
+
+    border: 10px #007bff;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+/*.container:hover input ~ .checkmark {*/
+/*    !*background-color: #ccc;*!*/
+/*    !*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*!*/
+/*}*/
+.class-hover0:hover input ~ .checkmark{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.class-hover1:hover input ~ .checkmark{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.class-hover2:hover input ~ .checkmark{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+
+
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Comic Sans MS", sans-serif;
+
+
+    /*background-image: url('../pictures/bgFullHD.png');*/
+    /*background-image: url('../pictures/bgFullHD_Gaussian_blur.png');*/
+    background-image: url('../pictures/bgmillBLURE15.png');
+    /*background-image: url('../pictures/bgFullHD_Gaussian_blur.png');*/
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0; /* замените на цвет, который вы хотите использовать */
+}
+
+
+
+.settings-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.settings-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+    /*margin-left: -10%;*/
+    margin-right: 20%;
+}
+.settings-group label {
+    margin-right: 10px;
+}
+.settings-group select,
+.settings-group input[type="range"] {
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    height: 200px;
+    width: 300px;
+}
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+
+/*.settings-group[id ="swtch"]{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+button {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#submit_button{
+
+    /*margin-left: 50px;*/
+    /*margin-top: -80px;*/
+
+
+    width: 200px;
+    height: 200px;
+    font-size: 45px;
+
+    /*margin-bottom: 10%;*/
+}
+
+button[id="submit_button"]{
+    display: flex;
+    justify-content: center; /* Выравнивание по центру по горизонтали */
+    align-items: center;
+}
+
+#submit_button{
+    margin-bottom: 100px;
+    background-color: #57cb33;
+    margin-top: 80px;
+}
+
+#submit_button:hover{
+    background-color: #4da131;
+}
+
+#submit_button:active{
+    background-color: #3f8c26;
+}
+
+#swtch{
+    margin-bottom: 50px;
+}
+
+#colorScheme {
+    text-align: center;
+
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 35px;
+}
+
+div[class="container"]{
+    display: flex;
+    justify-content: center; /* Выравнивание по центру по горизонтали */
+    align-items: center;
+}
+
+
+
+
+
+/* Стилизация для меток*/
+/*label {*/
+/*    display: inline-block;*/
+/*    width: 200px; !* Размеры вашей картинки *!*/
+/*    height: 85px; !* Размеры вашей картинки *!*/
+/*    background-size: cover; !* Растянуть изображение в соответствии с размерами метки *!*/
+/*    cursor: pointer;*/
+/*}*/
+
+/* Дополнительные стили для отображения выбранных radioButtons */
+input[type="radio"]:checked + label {
+    border: 2px solid blue; /* Добавить синюю обводку для выбранного элемента */
+    box-sizing: border-box; /* Учесть обводку в расчете размеров метки */
+}
+
+/*label {*/
+/*    display: inline-block;*/
+/*    width: 200px; !* Ширина вашего radioButton *!*/
+/*    height: 100px; !* Высота вашего radioButton *!*/
+/*    background-color: transparent; !* Прозрачный фон *!*/
+/*    cursor: pointer;*/
+/*}*/
+
+/* Стилизация для меток */
+input[type="radio"] {
+    display: none; /* Скрыть стандартный внешний вид radioButton */
+}
+
+
+
+/*#testzxc1,*/
+/*#testzxc2 {*/
+/*    max-width: 400px;*/
+/*    max-height: 200px;*/
+
+/*    display: flex;*/
+/*    justify-content: center; !* Выравнивание по центру по горизонтали *!*/
+/*    align-items: center;*/
+
+/*    background-color: coral;*/
+/*}*/
+
+.games{
+    max-width: 300px;
+    height: 300px;
+
+    display: flex;
+    justify-content: center; /* Выравнивание по центру по горизонтали */
+    align-items: center;
+
+    /*background-color: #50b6ff;*/
+    margin: 1%;
+}
+
+.game {
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center; /* Выравнивание по центру по горизонтали */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    margin-top: 20px; /* Добавим отступ сверху */
+    /*margin-left: 120px;*/
+}
+
+.testV{
+    display: flex;
+    flex-direction: column;
+}
+
+img[name="game1"],
+img[name="game2"],
+img[name="game3"] {
+    max-width: 300px;
+    max-height: 300px;
+    /*margin: 10px;*/
+}
+
+/* Раскомментируйте эту строку, если нужен margin-left для game1 */
+/* img[name="game1"] { margin-left: 135px; } */
+
+/* Раскомментируйте эту строку, если нужен margin-right для game2 и game3 */
+/* img[name="game2"],
+img[name="game3"] { margin-right: 135px; } */
+
+
+
+
+
+.animalCountButton{
+    width: 150%;
+    margin-right: 50px;
+}
+
+
+
+.settings-form button{
+    background-color: #63c517;
+    /*background-color: #57cb33;*/
+}
+
+
+label[id="3450d"]{
+    margin-left: 50%;
+}
+
+
+
+/*---------------------------------------------slide-button ----------------------------------------------*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px; /* Удаляем скругление углов */
+}
+
+.slider:before {
+
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 85px;
+    left: 7px;
+    bottom: 7px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 15px; /* Удаляем скругление углов */
+}
+
+.slider.checked {
+    background-color: #2196F3;
+}
+
+.slider.checked:before {
+    transform: translateY(-85px);
+    border-radius: 15px;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+/* --------------------------- icons ----------------------------*/
+#icons {
+    position: fixed; /* Позиционирование фиксированное */
+    top: 0; /* Отступ от верхнего края */
+    left: 0; /* Отступ от левого края */
+    z-index: 9999; /* Перемещаем элементы вперед, чтобы они отображались поверх остального контента */
+    margin: 10px; /* Добавим небольшие отступы */
+}
+
+#icons img {
+    width: 120px;
+    margin-right: 20px;
+}
