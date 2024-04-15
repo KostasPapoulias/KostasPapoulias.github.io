@@ -2,54 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-<!--    <link rel="stylesheet" href="css/style.css">-->
-        <link rel="stylesheet" href="Animals/style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 height=device-height">
+    <link rel="stylesheet" href="../css/settings-css.css">
+    <link rel="stylesheet" href="../SoundClick/style.css">
+    <link rel="stylesheet" href="../Clicks/style.css">
+    <link rel="stylesheet" href="../Animals/style.css">
+    <title>MysLis</title>
 </head>
 <body>
+
 <div class="menu">
-    <h1>Menu</h1>
+    <div class="container">
+        <form class="settings-form" action="#">
+            <div class="settings-group class-hover2">
+                <label>Počet obrázků:</label>
+                <label class="container">1
+                    <input type="radio" checked="checked" name="radio1" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">2
+                    <input type="radio" name="radio1" value="2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">3
+                    <input type="radio" name="radio1" value="3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">4
+                    <input type="radio" name="radio1" value="4">
+                    <span class="checkmark"></span>
+                </label>
 
-    <div class="games">
-        <h2>GAME 1</h2>
-        <p>Choose count of animals:</p>
-        <select id="selectGame1">
-            <option value="3" selected>3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-                <button id="button1">Start a game</button>
+            </div>
 
-<!--        <img src="pictures/icon1.png" name="game1" id="button1">-->
+            <div class="settings-group class-hover2">
+                <label>Počet kol:</label>
+                <label class="container">3
+                    <input type="radio" checked="checked" name="radio2" value="3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">5
+                    <input type="radio" name="radio2" value="5">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">7
+                    <input type="radio" name="radio2" value="7">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">9
+                    <input type="radio" name="radio2" value="9">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
 
+            <div class="settings-group class-hover2 horizontal" id="swtch">
+                <div class="vertical">
+                    <label for="switch1">Pokrok v obtížnosti:</label>
+                    <label class="switch horizontal-switches">
+                        <input type="checkbox" id="switch1">
+                        <span class="slider" id="slider1"></span>
+                    </label>
+                </div>
+
+                <div class="vertical">
+                    <label for="switch2">Nekonečná hra:</label>
+                    <label class="switch horizontal-switches">
+                        <input type="checkbox" id="switch2">
+                        <span class="slider" id="slider2"></span>
+                    </label>
+                </div>
+            </div>
+
+        </form>
     </div>
 
     <div class="game">
-        <h2>GAME 2</h2>
-        <p>Choose count of animals:</p>
-        <select id="game2">
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <button id="button2">Start a game 2</button>
-    </div>
-
-    <div class="game">
-        <h2>GAME 3</h2>
-        <p>Choose count of animals:</p>
-        <select id="game3">
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <button id="button3">Start a game 3</button>
+        <div class="games">
+            <img src="../pictures/icon2.2.png" name="game1" id="button1">
+        </div>
+        <div class="games" >
+            <img src="../pictures/icon1.1.png" name="game2" id="button2">
+        </div>
+        <div class="games">
+            <img src="../pictures/icon3.3.png" name="game3" id="button3">
+        </div>
     </div>
 
 </div>
 
-<script src="script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>
