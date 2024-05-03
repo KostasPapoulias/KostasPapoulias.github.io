@@ -1,5 +1,5 @@
 let dragNdrop = (localStorage.getItem('GAME_ID') == 'button2');
-let animals = ['krocan', 'kohoutek', 'kráva','kůň', 'prasátko', 'králík', 'kačka', 'kozel', 'kočka', 'pes', 'žába'];
+let animals = ['krocan', 'myš', 'kohoutek', 'kráva', 'kůň', 'prasátko', 'králík', 'kačka', 'kozel', 'kočka', 'pes', 'žába'];
 let IMG_PATH = "../png/animalHalfs/";
 let MAX_ANIMALS = localStorage.getItem('MAX_ANIMALS');
 let MAX_ROUNDS = localStorage.getItem('MAX_ROUNDS');
