@@ -272,7 +272,7 @@ function drop(event) {
 
     if (!dropTarget) return;
     control(dropTarget === selectedCellName);
-    selectedCellName=""; // !!!!!!!!!!!!!!!
+    selectedCellName=""; // !!!
 
 
 }
@@ -337,7 +337,7 @@ function control(result){
 
         setHighlight(index);
         updateSelectSection();
-        selectedCellName=""; // !!!!!!!!!!!!!!!
+        selectedCellName=""; // !!!
 
     } else {
         if (COMPLEXITY_INC && ROUNDS_PLAYED > 3) {
