@@ -198,7 +198,6 @@ function dragStart(event) {
         selectedCellName = cellDiv.textContent.trim();
 
     }
-
 }
 
 function dragOver(event) {
@@ -257,7 +256,6 @@ newDiv.addEventListener('dragleave', (event) => {
  */
 function drop(event) {
     event.preventDefault();
-         
 
         main_section.removeChild(newDiv);
         highlightCell.textContent = tempName;
@@ -265,7 +263,6 @@ function drop(event) {
         highlightCell.addEventListener('drop', drop);
         main_section.appendChild(highlightCell);
         added = false;
-
 
     const dropTarget = tempName;
     if(selectedCellName =="")   return;
