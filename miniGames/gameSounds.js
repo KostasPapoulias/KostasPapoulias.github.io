@@ -1,8 +1,8 @@
 //GLOBAL section
 
 // let animals = ['cat', 'duck', 'frog', 'pig', 'bunny', 'horse', 'goat', 'turkey', 'dog', 'cow', 'rat', 'rooster'];
-let animals = ['krocan', 'myš', 'kohoutek', 'kráva','kůň', 'prasátko', 'králík', 'kačka', 'kozel', 'kočka', 'pes', 'žába'];
-let IMG_PATH = "../png/SoundClickGameAssets/";
+let animals = ['krocan', 'myš', 'kohoutek', 'kráva', 'kůň', 'prasátko', 'králík', 'kačka', 'kozel', 'kočka', 'pes', 'žába'];
+let IMG_PATH = "png/soundClickGameAssets/";
 let SOUND_PATH = "../sounds/";
 
 let MAX_ANIMALS = localStorage.getItem('MAX_ANIMALS');
