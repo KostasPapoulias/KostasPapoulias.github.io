@@ -21,7 +21,6 @@ const menuButtonOv = document.createElement('button');
 const contentDivEnd = document.getElementById('modalEndGameContent');
 const textPEndGameModal = document.getElementById('modalText123');
 
-
 /**
  * creates contentDiv and appends it to overlay
  */
