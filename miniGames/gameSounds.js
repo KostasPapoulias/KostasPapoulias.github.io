@@ -1,6 +1,6 @@
 //GLOBAL section
 let animals = ['krocan', 'myš', 'kohout', 'kráva','kůň', 'prase', 'králík', 'kachna', 'koza', 'kočka', 'pes', 'žába'];
-let IMG_PATH = "../png/soundClickGameAssets/";
+let IMG_PATH = "png/soundClickGameAssets/";
 let SOUND_PATH = "../sounds/";
 
 let MAX_ANIMALS = localStorage.getItem('MAX_ANIMALS');
