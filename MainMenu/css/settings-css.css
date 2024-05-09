@@ -74,20 +74,6 @@ body {
     margin-right: 5%;
 }
 
-/* Styles for select inputs and range inputs within the settings group */
-
-.settings-group select,
-.settings-group input[type="range"] {
-    padding: 5px;
-    border-radius: 5px;
-    margin-right: 10px;
-    height: 200px;
-    width: 300px;
-}
-.settings-group:last-child {
-    margin-bottom: 0;
-}
-
 .horizontal {
     display: flex;
     flex-direction: row;
@@ -100,22 +86,12 @@ body {
 
 .center{
     align-items: center;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+    display: flex;
+    justify-content: center;
 }
 
 #swtch{
     margin-bottom: 50px;
-}
-
-#colorScheme {
-    text-align: center;
-    font-family: "Comic Sans MS", sans-serif;
 }
 
 div[class="container"]{
@@ -124,59 +100,18 @@ div[class="container"]{
     align-items: center;
 }
 
-/* Additional styles for displaying selected radioButtons */
-input[type="radio"]:checked + label {
-    border: 2px solid blue;
-    box-sizing: border-box;
-}
-
-/* Styles for labels */
-input[type="radio"] {
-    display: none;
-}
-
-.games{
-    max-width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1%;
-}
-
 .game{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-img[name="game1"],
-img[name="game2"],
-img[name="game3"] {
-    max-width: 300px;
-    max-height: 300px;
-}
-
-.animalCountButton{
-    width: 150%;
-    margin-right: 50px;
+    margin-top: 50px;
 }
 
 /*---------------------------------------------slide-button ----------------------------------------------*/
 
 .switch {
     position: relative;
-    display: inline-block;
     width: 100px;
     height: 150px;
-
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 .slider {
@@ -205,7 +140,6 @@ img[name="game3"] {
 
 .slider.checked {
     background-color: #2196F3;
-
 }
 
 .slider.checked:before {
@@ -224,10 +158,11 @@ input:focus + .slider {
     left: 0;
     z-index: 9999;
     margin: 10px;
+    text-align: left;
 }
 
 #icons img {
-    width: 120px;
+    max-width: 25%;
     margin-right: 20px;
 }
 
@@ -238,9 +173,15 @@ input:focus + .slider {
     margin-right: 50px;
 }
 /* --------------------------- sliders ----------------------------*/
-datalist {
+.range-slider{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+datalist {
+    max-width: 200px;
+    overflow: hidden;
 }
 
 datalist option {
@@ -252,11 +193,6 @@ datalist option {
     flex-direction: row;
 }
 
-.center{
-    display: flex;
-    justify-content: center;
-}
-
 .input-range {
     height: 200px;
     margin-right: 30px;
@@ -265,6 +201,7 @@ datalist option {
 .input-range,
 datalist {
     display: flex;
+    flex-direction: column;
 }
 
 input::-webkit-slider-thumb {
@@ -284,7 +221,6 @@ datalist option {
     height: 50px;
     line-height: 50px;
 }
-
 
 input::-webkit-slider-thumb {
     width: 35px;
@@ -336,3 +272,9 @@ input::-webkit-slider-runnable-track {
     text-decoration: none;
     cursor: pointer;
 }
+
+.gamepic{
+    max-width: 15%;
+    max-height: 15%;
+}
+

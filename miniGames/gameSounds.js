@@ -1,6 +1,6 @@
 //GLOBAL section
 let animals = ['krocan', 'myš', 'kohout', 'kráva','kůň', 'prase', 'králík', 'kachna', 'koza', 'kočka', 'pes', 'žába'];
-let IMG_PATH = "png/SoundClickGameAssets/";
+let IMG_PATH = "../png/soundClickGameAssets/";
 let SOUND_PATH = "../sounds/";
 
 let MAX_ANIMALS = localStorage.getItem('MAX_ANIMALS');
@@ -20,6 +20,7 @@ const restartButton = document.createElement('button');
 const menuButtonOv = document.createElement('button');
 const contentDivEnd = document.getElementById('modalEndGameContent');
 const textPEndGameModal = document.getElementById('modalText123');
+
 
 /**
  * creates contentDiv and appends it to overlay
@@ -78,7 +79,7 @@ function returnMenu(){
 function showOverlay(text) {
     var modalText = document.getElementById("modalText");
     let parent;
-    modalText.textContent = text; // Устанавливаем текст модального окно
+    modalText.textContent = text;
 
     document.body.style.overflow = 'hidden';
 

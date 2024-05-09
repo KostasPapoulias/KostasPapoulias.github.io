@@ -1,13 +1,11 @@
-/* Мерцание белым цветом */
 @keyframes sizing {
   0% {scale: 1;}
   50% {scale: 1.25;}
   100% {scale: 1; }
 }
 
-/* Применяем анимации к изображению */
 .cheat{
-  animation: sizing 2s infinite; /* Применяем обе анимации */
+  animation: sizing 2s infinite;
 }
 
 @keyframes goUp {
@@ -85,7 +83,7 @@
 .cell{
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
   display: inline-block;
-  margin: 10px;
+  /*margin-right: 100px;*/
   text-align: center;
   max-height: auto;
   max-width: auto;

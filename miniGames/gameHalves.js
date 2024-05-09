@@ -81,7 +81,7 @@ function showOverlay(text) {
     let modalText = document.getElementById("modalText");
     let parent;
 
-    modalText.textContent = text; // Устанавливаем текст модального окно
+    modalText.textContent = text;
 
     overlay.style.display = "block";
     let closeElement = document.querySelector('.close');
