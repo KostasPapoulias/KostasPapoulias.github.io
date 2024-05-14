@@ -11,7 +11,6 @@ let INFINITY_GAME = JSON.parse(localStorage.getItem('INFINITY_GAME'));
 let COMPLEXITY_INC = JSON.parse(localStorage.getItem('COMPLEXITY_INC'));
 
 const overlay = document.getElementById('myModal');
-const closeButton = document.createElement('span');
 const contentDiv = document.createElement('div');
 
 const overlayEnd = document.getElementById('modalEndGame');
@@ -264,10 +263,10 @@ function playSoundGame() {
                 LOOSE_STREAK++;
 
 
-                if(LOOSE_STREAK % 3 === 0 && LOOSE_STREAK !== 0){
+                if(LOOSE_STREAK % 3 == 0 && LOOSE_STREAK !== 0){
                     MAX_ANIMALS--;
                 }
-                showOverlay("Ne, zkus' ještě jednou.");
+                showOverlay("Ne, zkus ještě jednou.");
             }
         });
     }
@@ -278,7 +277,7 @@ function playSoundGame() {
  * updates the play_animals array
  */
 function winStreakValidator(){
-    if (WIN_STREAK % 3 === 0 && COMPLEXITY_INC && MAX_ANIMALS < 6){
+    if (WIN_STREAK % 3 == 0 && COMPLEXITY_INC && MAX_ANIMALS < 6){
         MAX_ANIMALS++;
     }
     play_animals = animals.slice(0,MAX_ANIMALS);
@@ -319,9 +318,9 @@ function guessHelper(){
  */
 function endGameValidator(){
     ROUNDS_PLAYED++;
-    if(ROUNDS_PLAYED === MAX_ROUNDS && !INFINITY_GAME ){
+    if(ROUNDS_PLAYED == MAX_ROUNDS && !INFINITY_GAME ){
         hideOverlay();
-        textPEndGameModal.textContent = 'Skvělá hra, drahá!\n' + "Vaše skóre je: " + success_attempts + "/" + total_attempts;
+        textPEndGameModal.textContent = 'Skvělá hra, šikulo!!\n' + "Vaše skóre je: " + success_attempts + "/" + total_attempts;
         endGame();
         ROUNDS_PLAYED = 0;
         WIN_STREAK = 0;

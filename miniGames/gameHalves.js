@@ -81,7 +81,7 @@ function showOverlay(text) {
     let modalText = document.getElementById("modalText");
     let parent;
 
-    modalText.textContent = text;
+    modalText.textContent = text; // Устанавливаем текст модального окно
 
     overlay.style.display = "block";
     let closeElement = document.querySelector('.close');
@@ -89,14 +89,12 @@ function showOverlay(text) {
     if (closeElement) {
         parent.removeChild(closeElement);
     }
-
-    setTimeout(hideOverlay,2000);
-    setTimeout(() => {parent.insertBefore(closeElement, modalText)}, 2000);
-
-    var speech = new SpeechSynthesisUtterance();
+    const speech = new SpeechSynthesisUtterance();
     speech.text = text;
     speech.lang = 'cs-CZ';
     window.speechSynthesis.speak(speech);
+    setTimeout(hideOverlay,2000);
+    setTimeout(() => {parent.insertBefore(closeElement, modalText)}, 2000);
 }
 
 /**
@@ -113,7 +111,6 @@ function hideOverlay() {
 class cellClass{
     constructor(name, side, image){
         this.name = name;
-        this.side = side;
         this.displayed = false;
         this.image = image;
     }
@@ -124,14 +121,8 @@ class cellClass{
     setDisplayed(flag){
         this.displayed = flag;
     }
-    getDisplayed(){
-        return this.displayed;
-    }
     getName(){
         return this.name;
-    }
-    getSide(){
-        return this.side;
     }
     getImage(){
         return this.image;
@@ -340,6 +331,7 @@ function activateCheatClass(el) {
  */
 function click(name) {
     control(name === highlightCell.textContent.trim());
+    // control(name === highlightCell.getAttribute("data-animal").trim());
 }
 
 /**
@@ -488,11 +480,6 @@ function updateSelectSection() {
     for (let i = 0; i < MAX_ANIMALS; i++) {
         if(cell_selection[i].getName() === selectedCellName) {
             cell_selection[i].selected = true;
-        }
-        if (cell_selection[i].selected) {
-            cell_selection[i].element.style.display = "none";
-        } else {
-            cell_selection[i].element.style.display = "inline-block";
         }
     }
 
